@@ -65,3 +65,10 @@ dist/
 certs/
 results/
 .ret.credentials
+
+
+#visual studio code files
+.vscode/*
+
+#Unused files
+src/components/hello-world.js

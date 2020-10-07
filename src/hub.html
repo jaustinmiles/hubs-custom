@@ -508,6 +508,21 @@
                 </a-entity>
             </template>
 
+            <template id="interactable-ball-media">
+                <a-entity
+                    class="interactable"
+                    body-helper="type: dynamic; mass: 1; collisionFilterGroup: 1; collisionFilterMask: 15;"
+                    set-unowned-body-kinematic
+                    is-remote-hover-target
+                    tags="isHandCollisionTarget: true; isHoldable: true; offersHandConstraint: true; offersRemoteConstraint: true; inspectable: true;"
+                    destroy-at-extreme-distances
+                    scalable-when-grabbed
+                    set-yxz-order
+                    matrix-auto-update
+                    hoverable-visuals
+                >
+            </template>
+
             <template id="interactable-emoji">
                 <a-entity
                     class="interactable"
@@ -1159,6 +1174,7 @@
                 pitch-yaw-rotator
                 set-yxz-order
                 position="0 1.6 0"
+                
             >
                 <a-entity
                     id="gaze-teleport"
@@ -1169,6 +1185,7 @@
             </a-entity>
 
             <a-entity emoji-hud="camera: #avatar-pov-node;"></a-entity>
+            <a-entity ball="throwBall: /actions/throwBall; camera: #avatar-pov-node;"></a-entity>
 
             <a-entity
                 id="player-left-controller"

@@ -116,6 +116,7 @@ import "./components/set-max-resolution";
 import "./components/avatar-audio-source";
 // import "./components/hello-world";
 import "./components/ball";
+// import {injector} from "./injector";
 import { sets as userinputSets } from "./systems/userinput/sets";
 
 import ReactDOM from "react-dom";

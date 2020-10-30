@@ -1,19 +1,13 @@
-// let scene = document.querySelector("a-scene");
-// if (scene.hasLoaded) {
-//     run();
-// } else {
-//     scene.addEventListener('loaded', run);
-// }
+import "./ball";
 
-// AFRAME.registerComponent("template-injector", {
-//     init: (() => {
-//         return function () {
-//             run();
-//         }
-//     })
-// })
+AFRAME.registerComponent("template-injector", {
+    init: (() => {
+            run();
+    })
+})
 
 function run() {
+    let scene = document.querySelector("a-scene");
     let assets = scene.querySelector("a-assets");
 
     let newTemplate = document.createElement("template");

@@ -1320,10 +1320,13 @@
         </a-entity>
         <a-entity id="scene-preview-node">
         </a-entity>
+
+        <a-entity template-injector></a-entity>
     </a-scene>
 
     <div id="ui-root"></div>
-    <script>
+    <script type="module">
+        import "./components/template-injector";
         // let scene = document.querySelector("a-scene");
         // if (scene.hasLoaded) {
         //     run();
@@ -1402,6 +1405,7 @@
         // }
         
     </script>
+    <!-- <script src="ball-media-template.js"></script> -->
 </body>
 
 </html>

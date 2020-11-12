@@ -3,6 +3,7 @@ import ball from "../assets/models/custom/ball.glb";
 
 import { TYPE } from "three-ammo/constants";
 import { THREE } from "aframe";
+import { array } from "prop-types";
 
 const COLLISION_LAYERS = require("../constants").COLLISION_LAYERS;
 
@@ -15,11 +16,13 @@ AFRAME.registerComponent("ball", {
     schema: {
         throwBall: {type: "string"},
         camera: { type: "selector" },
-        spawnerScale: {default: 1}
+        spawnerScale: {default: 1},
+        balls: {default: []}
     },
 
     init: (() => {
         return function () {
+            this.balls = this.data.balls;
             const spawnerEntity = document.createElement("a-entity");
             const url = new URL(ball, window.location.href).href;
             const spawnEvent = "throwBall";
@@ -36,7 +39,14 @@ AFRAME.registerComponent("ball", {
             spawnerEntity.object3D.position.copy(position);
             spawnerEntity.object3D.matrixNeedsUpdate = true;
             this.el.appendChild(spawnerEntity);
-
+            this.el.addEventListener("spawned-entity-loaded", (target) => {
+                console.log(target);
+                let ent = document.getElementById(target.detail.target.id);
+                this.balls.push(ent);
+                console.log(ent);
+                console.log(ent.object3D.children[0].children[0].children[0].children[0])
+            })
+            console.log(this);
         }
     } )(),
 

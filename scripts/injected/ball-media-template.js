@@ -1,18 +1,3 @@
-// let scene = document.querySelector("a-scene");
-// if (scene.hasLoaded) {
-//     run();
-// } else {
-//     scene.addEventListener('loaded', run);
-// }
-
-// AFRAME.registerComponent("template-injector", {
-//     init: (() => {
-//         return function () {
-//             run();
-//         }
-//     })
-// })
-
 function run() {
     let assets = scene.querySelector("a-assets");
 

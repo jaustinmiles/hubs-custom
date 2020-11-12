@@ -129,25 +129,16 @@ function registerNetworkSchemas() {
     ]
   });
 
-  // NAF.schemas.add({
-  //   template: "#interactable-ball-media",
-  //   components: [
-  //     {
-  //       component: "position",
-  //       requiresNetworkUpdate: vectorRequiresUpdate(0.001)
-  //     },
-  //     {
-  //       component: "rotation",
-  //       requiresNetworkUpdate: vectorRequiresUpdate(0.5)
-  //     },
-  //     {
-  //       component: "scale",
-  //       requiresNetworkUpdate: vectorRequiresUpdate(0.001)
-  //     },
-  //     "media-loader",
-  //     "pinnable"
-  //   ]
-  // });
+
+  NAF.schemas.add({
+    template: "#ball-array-media",
+    components: [
+      {
+        component: "ball",
+        property: "balls"
+      }
+    ]
+  })
 
   NAF.schemas.add({
     template: "#interactable-emoji",
